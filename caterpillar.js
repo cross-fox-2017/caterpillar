@@ -8,11 +8,11 @@ function isEmpty(arr) {
   }
 }
 function count(arr) {
-  let length = 0
+  let panjang = 0
   arr.forEach(function(data){
-    length++
+    panjang++
   })
-  return length
+  return panjang
 }
 function head(arr) {
   return arr[0]
@@ -26,7 +26,16 @@ function tail(arr) {
   return tail
 }
 function flatten(arr) {
-
+  let flat = arr.reduce(function(prev, curr){
+    return prev.concat(flatmore(curr))
+  }, [])
+  return flat
 }
-console.log(tail([2,3]));
-console.log(tail([1,2,3]));
+function flatmore(curr){
+  if (Array.isArray(curr)){
+    return flatten(curr)
+  } else {
+    return curr
+  }
+}
+console.log(flatten([1, [[[[2]]], 3], 4, [5, [6, 7]]]));
