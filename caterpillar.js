@@ -7,10 +7,14 @@ function isEmpty(arr) {
     return false
   }
 }
-function first() {
-
+function count(arr) {
+  let length = 0
+  arr.forEach(function(data){
+    length++
+  })
+  return length
 }
-function count() {
+function first() {
 
 }
 function head() {
@@ -22,5 +26,5 @@ function tail() {
 function flatten() {
 
 }
-console.log(isEmpty([]));
-console.log(isEmpty([1,2,3]));
+console.log(count([]));
+console.log(count([1,2,3]));
