@@ -14,17 +14,19 @@ function count(arr) {
   })
   return length
 }
-function first() {
+function head(arr) {
+  return arr[0]
+}
+function tail(arr) {
+  let tail = arr.filter(function(curVal, index){
+    if (index != 0){
+      return curVal
+    }
+  })
+  return tail
+}
+function flatten(arr) {
 
 }
-function head() {
-
-}
-function tail() {
-
-}
-function flatten() {
-
-}
-console.log(count([]));
-console.log(count([1,2,3]));
+console.log(tail([2,3]));
+console.log(tail([1,2,3]));
